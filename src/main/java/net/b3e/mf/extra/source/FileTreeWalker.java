@@ -26,21 +26,20 @@ import java.nio.file.attribute.BasicFileAttributes;
 import java.util.EnumSet;
 import java.util.Set;
 
-import org.culturegraph.mf.exceptions.MetafactureException;
-import org.culturegraph.mf.framework.DefaultObjectPipe;
+import org.culturegraph.mf.framework.MetafactureException;
 import org.culturegraph.mf.framework.ObjectReceiver;
 import org.culturegraph.mf.framework.annotations.Description;
 import org.culturegraph.mf.framework.annotations.In;
 import org.culturegraph.mf.framework.annotations.Out;
+import org.culturegraph.mf.framework.helpers.DefaultObjectPipe;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Walks through a file tree tree and emits the name of 
- * each file found.
- * 
+ * Walks through a file tree tree and emits the name of each file found.
+ *
  * @author Christoph Böhme
- * 
+ *
  */
 @Description("Walks through a file tree and emits the name of each file found.")
 @In(String.class)
@@ -49,24 +48,24 @@ public final class FileTreeWalker extends
 		DefaultObjectPipe<String, ObjectReceiver<String>> {
 
 	private static final Logger LOG = LoggerFactory.getLogger(FileTreeWalker.class);
-	
+
 	private final Visitor visitor = new Visitor();
 	private final Set<FileVisitOption> visitOptions = EnumSet.noneOf(FileVisitOption.class);
-	
+
 	private int maxDepth = Integer.MAX_VALUE;
-	
+
 	/**
 	 * Returns whether symbolic links are followed.
-	 * 
+	 *
 	 * @return true if symbolic links are followed
 	 */
 	public boolean isFollowingLinks() {
 		return visitOptions.contains(FileVisitOption.FOLLOW_LINKS);
 	}
-	
+
 	/**
 	 * Configures whether to follow symbolic links or not
-	 * 
+	 *
 	 * @param follow if true symbolic links are followed
 	 */
 	public void setFollowLinks(final boolean follow) {
@@ -76,21 +75,21 @@ public final class FileTreeWalker extends
 			visitOptions.remove(FileVisitOption.FOLLOW_LINKS);
 		}
 	}
-	
+
 	/**
-	 * Returns the maximum depth to which the walker will descend 
+	 * Returns the maximum depth to which the walker will descend
 	 * in the directory hierarchy.
-	 * 
+	 *
 	 * @return max visitation depth
 	 */
 	public int getMaxDepth() {
 		return maxDepth;
 	}
-	
+
 	/**
 	 * Sets the maximum depth to which the walker should descend
 	 * in the directory hierarchy.
-	 * 
+	 *
 	 * @param maxDepth sets the visitation depth. 0 means only
 	 *                 visiting the start node. Integer.MAX_VALUE
 	 *                 means descend as deep as possible.
@@ -98,7 +97,7 @@ public final class FileTreeWalker extends
 	public void setMaxDepth(final int maxDepth) {
 		this.maxDepth = maxDepth;
 	}
-	
+
 	@Override
 	public void process(final String directory) {
 		try {
@@ -121,22 +120,22 @@ public final class FileTreeWalker extends
 			}
 			return FileVisitResult.CONTINUE;
 		}
-		
+
 		@Override
 		public FileVisitResult visitFileFailed(final Path file, final IOException exc) {
 			LOG.warn("Failed visiting directory/file '{}': {}", file.toAbsolutePath().toString(), exc.toString());
 			return FileVisitResult.CONTINUE;
 		}
-		
+
 		@Override
 		public FileVisitResult postVisitDirectory(final Path dir, final IOException exc) {
 			if (exc != null) {
-				LOG.warn("Aborted directory visit '{}': {}", dir.toAbsolutePath().toString(), exc.toString());						
+				LOG.warn("Aborted directory visit '{}': {}", dir.toAbsolutePath().toString(), exc.toString());
 			}
 			return FileVisitResult.CONTINUE;
-			
+
 		}
 
 	}
-	
+
 }
