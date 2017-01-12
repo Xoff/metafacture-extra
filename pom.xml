@@ -6,7 +6,7 @@
 	<version>0.0.0-SNAPSHOT</version>
 	<name>metafacture-extra</name>
 	<description>Modules for metafacture which may be worth including in the core distribution at some point</description>
-	<url>http://github.com/Xoff/metafacture-extra</url>
+	<url>http://github.com/cboehme/metafacture-extra</url>
 	
 	<licenses>
 		<license>
@@ -16,23 +16,23 @@
 	</licenses>
 	
 	<scm>
-		<url>http://github.com/Xoff/metafacture-extra</url>
-		<connection>scm:git:git://github.com/Xoff/metafacture-extra.git</connection>
-		<developerConnection>scm:git:git@github.com:Xoff/metafacture-extra.git</developerConnection>
+		<url>http://github.com/cboehme/metafacture-extra</url>
+		<connection>scm:git:git://github.com/cboehme/metafacture-extra.git</connection>
+		<developerConnection>scm:git:git@github.com:cboehme/metafacture-extra.git</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
 
 	<issueManagement>
 		<system>GitHub Issues</system>
-		<url>https://github.com/Xoff/metafacture-extra/issues</url>
+		<url>https://github.com/cboehme/metafacture-extra/issues</url>
 	</issueManagement>
 	
 	<developers>
-			<developer>
-			<id>Xoff</id>
+		<developer>
+			<id>cboehme</id>
 			<name>Christoph Böhme</name>
 			<email>christoph@b3e.net</email>
-			<url>https://github.com/Xoff</url>
+			<url>https://github.com/cboehme</url>
 			<roles>
 				<role>architect</role>
 				<role>developer</role>
