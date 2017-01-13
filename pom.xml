@@ -7,14 +7,14 @@
 	<name>metafacture-extra</name>
 	<description>Modules for metafacture which may be worth including in the core distribution at some point</description>
 	<url>http://github.com/cboehme/metafacture-extra</url>
-	
+
 	<licenses>
 		<license>
 			<name>Apache License, Version 2.0</name>
 			<url>https://www.apache.org/licenses/LICENSE-2.0</url>
 		</license>
 	</licenses>
-	
+
 	<scm>
 		<url>http://github.com/cboehme/metafacture-extra</url>
 		<connection>scm:git:git://github.com/cboehme/metafacture-extra.git</connection>
@@ -26,7 +26,7 @@
 		<system>GitHub Issues</system>
 		<url>https://github.com/cboehme/metafacture-extra/issues</url>
 	</issueManagement>
-	
+
 	<developers>
 		<developer>
 			<id>cboehme</id>
@@ -40,7 +40,7 @@
 			<timezone>+1</timezone>
 		</developer>
 	</developers>
-	
+
 	<parent>
 		<groupId>org.sonatype.oss</groupId>
 		<artifactId>oss-parent</artifactId>
@@ -49,9 +49,9 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<targetJdk>1.7</targetJdk>
+		<targetJdk>1.8</targetJdk>
 	</properties>
-	
+
 	<build>
 		<plugins>
 			<plugin>
@@ -64,7 +64,7 @@
 					<showWarnings>true</showWarnings>
 				</configuration>
 			</plugin>
-			
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-shade-plugin</artifactId>
@@ -87,7 +87,7 @@
 					</execution>
 				</executions>
 			</plugin>
-			
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-release-plugin</artifactId>
@@ -107,14 +107,14 @@
 			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.culturegraph</groupId>
 			<artifactId>metafacture-core</artifactId>
 			<version>4.0.0</version>
 		</dependency>
 	</dependencies>
-	
+
 	<profiles>
 		<profile>
 			<id>sonatype-oss-release</id>
@@ -138,7 +138,7 @@
 							</execution>
 						</executions>
 					</plugin>
-					
+
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-source-plugin</artifactId>
@@ -153,7 +153,7 @@
 							</execution>
 						</executions>
 					</plugin>
-					
+
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-gpg-plugin</artifactId>
