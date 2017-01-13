@@ -1,31 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.sonatype.oss</groupId>
+		<artifactId>oss-parent</artifactId>
+		<version>7</version>
+	</parent>
+
 	<groupId>net.b3e.</groupId>
 	<artifactId>metafacture-extra</artifactId>
 	<version>0.0.0-SNAPSHOT</version>
+
 	<name>metafacture-extra</name>
 	<description>Modules for metafacture which may be worth including in the core distribution at some point</description>
 	<url>http://github.com/cboehme/metafacture-extra</url>
-
 	<licenses>
 		<license>
 			<name>Apache License, Version 2.0</name>
 			<url>https://www.apache.org/licenses/LICENSE-2.0</url>
 		</license>
 	</licenses>
-
-	<scm>
-		<url>http://github.com/cboehme/metafacture-extra</url>
-		<connection>scm:git:git://github.com/cboehme/metafacture-extra.git</connection>
-		<developerConnection>scm:git:git@github.com:cboehme/metafacture-extra.git</developerConnection>
-		<tag>HEAD</tag>
-	</scm>
-
-	<issueManagement>
-		<system>GitHub Issues</system>
-		<url>https://github.com/cboehme/metafacture-extra/issues</url>
-	</issueManagement>
 
 	<developers>
 		<developer>
@@ -41,16 +37,36 @@
 		</developer>
 	</developers>
 
-	<parent>
-		<groupId>org.sonatype.oss</groupId>
-		<artifactId>oss-parent</artifactId>
-		<version>7</version>
-	</parent>
+	<scm>
+		<url>http://github.com/cboehme/metafacture-extra</url>
+		<connection>scm:git:git://github.com/cboehme/metafacture-extra.git</connection>
+		<developerConnection>scm:git:git@github.com:cboehme/metafacture-extra.git</developerConnection>
+		<tag>HEAD</tag>
+	</scm>
+	<issueManagement>
+		<system>GitHub Issues</system>
+		<url>https://github.com/cboehme/metafacture-extra/issues</url>
+	</issueManagement>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<targetJdk>1.8</targetJdk>
 	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.culturegraph</groupId>
+			<artifactId>metafacture-core</artifactId>
+			<version>4.0.0</version>
+		</dependency>
+	</dependencies>
 
 	<build>
 		<plugins>
@@ -99,21 +115,6 @@
 			</plugin>
 		</plugins>
 	</build>
-
-	<dependencies>
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>4.12</version>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>org.culturegraph</groupId>
-			<artifactId>metafacture-core</artifactId>
-			<version>4.0.0</version>
-		</dependency>
-	</dependencies>
 
 	<profiles>
 		<profile>
